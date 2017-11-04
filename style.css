@@ -39,7 +39,40 @@ and Blueprint http://www.blueprintcss.org/
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-7.0 Wordbreak
+Footer
+--------------------------------------------------------------*/
+#colophon {
+	margin-top: 50px;
+}
+
+#colophon .container {
+	border-top: 1px solid #ddd;
+	padding-top: 25px;
+}
+
+
+.footer-menu {
+	margin-left:0;
+	padding:0 0 30px 0;
+}
+
+.footer-menu li {
+	display:inline;
+	list-style-type:none;
+}
+
+.footer-menu li a {
+	border-left:1px solid #ddd;
+	padding: 0 8px;
+}
+
+.footer-menu > li:first-child > a {
+	border-left:none;
+	padding:0 8px 0 0;
+}
+
+/*--------------------------------------------------------------
+Wordbreak
 --------------------------------------------------------------*/
 #primary, #secondary {
  -ms-word-break: break-all;

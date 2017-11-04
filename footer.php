@@ -11,16 +11,27 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+
 		<div class="container">
 			<div class="row">
-				<div class="site-info">
-					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bootstrapwp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'bootstrapwp' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( __( 'Theme: %1$s by %2$s.', 'bootstrapwp' ), 'bootstrapwp', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
-				</div><!-- .site-info -->
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</footer><!-- #colophon -->
+			<div class="col-md-6 col-lg-6">
+				<?php if (has_nav_menu('footer-menu', 'bootstrapwp')) { ?>
+		            <nav role="navigation">
+		            <?php wp_nav_menu(array(
+		              'container'       => '',
+		              'menu_class'      => 'footer-menu',
+		              'theme_location'  => 'footer-menu')
+		            ); 
+		            ?>
+		          </nav>
+            	<?php } ?>
+			</div>
+			<div class="col-md-6 col-lg-6">
+				<p class="alignright">&copy; <?php _e('Copyright', 'bootstrapwp'); ?> <?php echo date('Y'); ?> - <a href="<?php echo home_url(); ?>/" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+			</div>
+		</div><!-- .row -->
+	</div><!-- .containr -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
