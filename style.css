@@ -158,7 +158,9 @@ Wordbreak
 .sticky {
 }
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.8em;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 1.8em;
 }
 .byline,
 .updated {
@@ -222,7 +224,8 @@ Wordbreak
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
-object {
+object,
+img {
 	max-width: 100%;
 }
 
