@@ -92,11 +92,15 @@ add_action( 'widgets_init', 'bootstrapwp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bootstrapwp_scripts() {
-	wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.7', 'all' );
+	wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.2.0', 'all' );
+
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.7.0', 'all' );
 
 	wp_enqueue_style( 'bootstrapwp-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.7', true );
+	wp_enqueue_script( 'respond-js', get_template_directory_uri() . '/js/respond.min.js', array('jquery'), '1.4.2', true );
+
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.2.0', true );
 
 	wp_enqueue_script( 'bootstrapwp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -105,7 +109,6 @@ function bootstrapwp_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bootstrapwp_scripts' );
-
 /**
  * Implement the Custom Header feature.
  */
