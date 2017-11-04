@@ -91,6 +91,11 @@ and Blueprint http://www.blueprintcss.org/
 	display: none;
 }
 
+.widget ul {
+	list-style: none;
+	padding-left:10px;
+}
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
