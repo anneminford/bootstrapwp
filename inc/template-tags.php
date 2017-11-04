@@ -79,12 +79,12 @@ function bootstrapwp_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'bootstrapwp' ),
+		_x( '<i class="fa fa-clock-o"></i> %s', 'post date', 'bootstrapwp' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'bootstrapwp' ),
+		_x( '<i class="fa fa-user"></i> %s', 'post author', 'bootstrapwp' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 

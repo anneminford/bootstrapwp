@@ -39,6 +39,26 @@ and Blueprint http://www.blueprintcss.org/
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+Post Meta
+--------------------------------------------------------------*/
+.entry-meta .posted-on {
+	margin-right: 20px;
+}
+
+.posted-on .fa, .byline .fa {
+	color: #bcbcbc;
+}
+
+.posted-on a, .byline a {
+	color: #777;
+	text-decoration: none;
+}
+
+.posted-on a:hover, .byline a:hover {
+	text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
 Footer
 --------------------------------------------------------------*/
 #colophon {
