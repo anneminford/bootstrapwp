@@ -153,3 +153,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Bootstrap menu.
  */
 require get_template_directory() . '/inc/bootstrap-walker.php';
+
+/**
+ * Comments Callback.
+ */
+require get_template_directory() . '/inc/comments-callback.php';
