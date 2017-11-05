@@ -19,11 +19,12 @@ get_header(); ?>
 			<?php if ( $the_query->have_posts() ) : ?>
 
 				<div class="row">
+					<div id="portfolio-items">
 
 					<!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-					<div class="col-sm-6 col-md-4">
+					<div class="col-sm-6 col-md-4 item">
 						<div class="portfolio-item">
 							<a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 							<?php the_post_thumbnail(); ?>
@@ -34,6 +35,8 @@ get_header(); ?>
 					</div>
 					<?php endwhile; ?>
 					<!-- end of the loop -->
+
+				</div> <!-- #portfolio-items -->
 
 				</div> <!-- .row -->
 				
