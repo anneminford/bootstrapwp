@@ -158,3 +158,8 @@ require get_template_directory() . '/inc/bootstrap-walker.php';
  * Comments Callback.
  */
 require get_template_directory() . '/inc/comments-callback.php';
+
+/**
+ * Author Meta.
+ */
+require get_template_directory() . '/inc/author-meta.php';

@@ -289,6 +289,18 @@ ol.comment-list {
 	border-color: #adadad;
 }
 
+.author-meta {
+	margin-top: 40px;
+}
+
+.author-meta .avatar {
+	border-radius: 50%;
+}
+
+.author-meta .fa{
+	font-size: 22px;
+}
+
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
