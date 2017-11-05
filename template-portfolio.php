@@ -10,7 +10,7 @@ get_header(); ?>
 	<div class="row">
 
 	<div id="primary" class="col-md-12 col-lg-12">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main portfolio" role="main">
 
 			<?php 
 			// the query
@@ -18,18 +18,25 @@ get_header(); ?>
 
 			<?php if ( $the_query->have_posts() ) : ?>
 
-				<!-- pagination here -->
+				<div class="row">
 
-				<!-- the loop -->
-				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				<?php the_post_thumbnail(); ?>
-				</a>
-					<h2><?php the_title(); ?></h2>
-				<?php endwhile; ?>
-				<!-- end of the loop -->
+					<!-- the loop -->
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-				<!-- pagination here -->
+					<div class="col-sm-6 col-md-4">
+						<div class="portfolio-item">
+							<a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<?php the_post_thumbnail(); ?>
+							</a>
+							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+							<a href="<?php the_permalink(); ?>" class="btn btn-primary">View Project</a>
+						</div>
+					</div>
+					<?php endwhile; ?>
+					<!-- end of the loop -->
+
+				</div> <!-- .row -->
+				
 
 				<?php wp_reset_postdata(); ?>
 

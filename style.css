@@ -39,6 +39,26 @@ and Blueprint http://www.blueprintcss.org/
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+Portfolio
+--------------------------------------------------------------*/
+.portfolio img.wp-post-image {
+    margin-bottom: 0;
+    height: auto;  
+}
+
+.portfolio-item {
+	margin: 10px 0;
+}
+
+.portfolio .thumbnail {
+	margin-bottom: 5px;
+}
+
+.portfolio h4 {
+	margin-top: 5px;
+}
+
+/*--------------------------------------------------------------
 Search
 --------------------------------------------------------------*/
 .search-highlight {
