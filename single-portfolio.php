@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single portfolio items.
  *
  * @package bootstrapwp
  */
@@ -10,14 +10,13 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 
-	<div id="primary" class="col-md-12 col-lg-12">
+	<div id="primary" class="col-lg-12">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+			<?php get_template_part( 'content', 'portfolio' ); ?>
 
-			<?php bootstrapwp_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
