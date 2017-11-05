@@ -173,3 +173,8 @@ require get_template_directory() . '/inc/comments-callback.php';
  * Author Meta.
  */
 require get_template_directory() . '/inc/author-meta.php';
+
+/**
+ * Search Results - Highlight.
+ */
+require get_template_directory() . '/inc/search-highlight.php';
