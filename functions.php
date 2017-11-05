@@ -38,7 +38,10 @@ function bootstrapwp_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'sidebar-thumb', 120, 120, true ); // Hard Crop Mode
+	add_image_size( 'homepage-thumb', 220, 180 ); // Soft Crop Mode
+	add_image_size( 'singlepost-thumb', 590, 9999 ); // Unlimited Height Mode
 
 	// This theme uses wp_nav_menu() in one location.
 	// This theme uses wp_nav_menu() in one location.
