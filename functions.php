@@ -178,3 +178,13 @@ require get_template_directory() . '/inc/author-meta.php';
  * Search Results - Highlight.
  */
 require get_template_directory() . '/inc/search-highlight.php';
+
+/**
+ * Custom Post Types
+ */
+require get_template_directory() . '/inc/post-types/CPT.php';
+
+/**
+ * Portfolio Custom Post Type
+ */
+require get_template_directory() . '/inc/post-types/register-portfolio.php';
