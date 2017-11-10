@@ -11,7 +11,7 @@ if ( !class_exists( 'ReduxFramework' ) ) {
 }
 
 // Register all the theme options
-require_once( get_template_directory() . '/redux-config.php' );
+require_once( get_template_directory() . '/inc/redux-config.php' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
