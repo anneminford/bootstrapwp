@@ -5,6 +5,14 @@
  * @package bootstrapwp
  */
 
+// Include the Redux theme options Framework
+if ( !class_exists( 'ReduxFramework' ) ) {
+	require_once( get_template_directory() . '/redux/framework.php' );
+}
+
+// Register all the theme options
+require_once( get_template_directory() . '/redux-config.php' );
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
