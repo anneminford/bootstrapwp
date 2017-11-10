@@ -289,6 +289,15 @@
                         'default'   => 'bootstrap.min.css',
                         'options'   => $styles,
                         ),
+
+                         array( 
+                            'title'     => __( 'Favicon', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Use this field to upload your custom favicon.', 'bootstrapwp' ),
+                            'id'        => 'custom_favicon',
+                            'default'   => '',
+                            'type'      => 'media',
+                            'url'       => true,
+                        ),
                     )
                 ); 
                
