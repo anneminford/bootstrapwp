@@ -260,6 +260,15 @@
                             'off'       => __( 'Disable', 'bootstrapwp' ),
                             'type'      => 'switch',
                         ),
+
+                         array( 
+                            'title'     => __( 'Logo', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Use this field to upload your custom logo for use in the theme header. (Recommended 200px x 40px)', 'bootstrapwp' ),
+                            'id'        => 'custom_logo',
+                            'default'   => '',
+                            'type'      => 'media',
+                            'url'       => true,
+                        ),
                     )
                 );
 
