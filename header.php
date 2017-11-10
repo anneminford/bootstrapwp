@@ -24,7 +24,8 @@
 	<header id="masthead" class="site-header" role="banner">
 
 	<nav role="navigation">
-		<div class="navbar navbar-static-top navbar-default">
+		<!-- <div class="navbar navbar-static-top navbar-default"> -->
+		<div class="navbar <?php if(bswp_option('disable_fixed_navbar') =='1') { echo "navbar-fixed-top"; } else {echo "navbar-static-top";} ?> <?php if(bswp_option('disable_inverse_navbar') == '1') { echo "navbar-inverse"; } else {echo "navbar-default";} ?> ">>
 			<div class="container">
 				<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 				<div class="navbar-header">
