@@ -12,6 +12,7 @@ echo bswp_option("test_text");
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
+		<?php if (bswp_option('disable_meta') =='1') { ?>
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php bootstrapwp_posted_on(); ?>
@@ -33,6 +34,7 @@ echo bswp_option("test_text");
 		<?php endif; ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
+		<?php } ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

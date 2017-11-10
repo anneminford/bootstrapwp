@@ -8,25 +8,27 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
+	<?php if (bswp_option('disable_meta') =='1') { ?>
 		<div class="entry-meta">
 			<?php bootstrapwp_posted_on(); ?>
 
-			<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-				<?php
+					<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
+			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'bootstrapwp' ) );
 				if ( $categories_list && bootstrapwp_categorized_blog() ) :
-					?>
-					<span class="cat-links">
-						<?php printf( __( '<i class="fa fa-folder-o"></i> %1$s', 'bootstrapwp' ), $categories_list ); ?>
-					</span>
-				<?php endif; // End if categories ?>
-			<?php endif; // End if 'post' == get_post_type() ?>
+			?>
+			<span class="cat-links">
+				<?php printf( __( '<i class="fa fa-folder-o"></i> %1$s', 'bootstrapwp' ), $categories_list ); ?>
+			</span>
+			<?php endif; // End if categories ?>
+		<?php endif; // End if 'post' == get_post_type() ?>
 
-			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<span class="comments-link"><i class="fa fa-comment-o"></i> <?php comments_popup_link( __( 'Leave a comment', 'bootstrapwp' ), __( '1 Comment', 'bootstrapwp' ), __( '% Comments', 'bootstrapwp' ) ); ?></span>
-			<?php endif; ?>
+		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+		<span class="comments-link"><i class="fa fa-comment-o"></i> <?php comments_popup_link( __( 'Leave a comment', 'bootstrapwp' ), __( '1 Comment', 'bootstrapwp' ), __( '% Comments', 'bootstrapwp' ) ); ?></span>
+		<?php endif; ?>
 		</div><!-- .entry-meta -->
+		<?php } ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -76,6 +78,10 @@
 		<?php
 		//end password protection check 
 		endif; ?>
+
+		<?php if (bswp_option('enable_disable_tags') == '1') { ?>
+		<p><?php the_tags(); ?></p>
+		<?php } ?>
 
 		<?php
 			wp_link_pages( array(

@@ -150,6 +150,25 @@
 
             public function setSections() {
 
+                // Bootstrap Button Colors
+                $btn_color = array(
+                    "default"   => "Default",
+                    "primary"   => "Primary",
+                    "info"      => "Info",
+                    "success"   => "Success",
+                    "warning"   => "Warning",
+                    "danger"    => "Danger",
+                    "link"      => "Link"
+                );
+
+                // Bootstrap Button Size
+                $btn_size = array(
+                    "xs"        => "Extra Small",
+                    "sm"        => "Small",
+                    "default"   => "Medium",
+                    "lg"        => "Large"
+                );
+
                 /**
                  * Used within different fields. Simply examples. Search for ACTUAL DECLARATION for field examples
                  * */
@@ -268,6 +287,69 @@
                             'default'   => '',
                             'type'      => 'media',
                             'url'       => true,
+                        ),
+                    )
+                );
+
+                  //Blog              
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-wordpress',
+                    'title'     => __('Blog', 'bootstrapwp'),
+                    'fields'    => array(
+                        array( 
+                            'title'     => __( 'Display Meta Data', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select to enable/disable the date and author.', 'bootstrapwp' ),
+                            'id'        => 'disable_meta',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array(  
+                            'title'     => __( 'Read More Button Text', 'bootstrapwp' ),
+                            'subtitle'  => __( 'This is the text that will replace Read More.', 'bootstrapwp' ),
+                            'id'        => 'read_more_text',
+                            'default'   => 'Read More',
+                            'type'      => 'text',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Make the Read More button Full Width - Block', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Enable/Disable full width button.', 'bootstrapwp' ),
+                            'id'        => 'read_more_block',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Read More Button Size', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button size you want.', 'bootstrapwp' ),
+                            'id'        => 'read_more_size',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_size,
+                        ),
+
+                        array( 
+                            'title'     => __( 'Read More Button Color', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button color you want.', 'bootstrapwp' ),
+                            'id'        => 'read_more_color',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_color,
+                        ),
+
+                        array( 
+                            'title'     => __( 'Display Tags', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select to enable/disable the post tags.', 'bootstrapwp' ),
+                            'id'        => 'enable_disable_tags',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
                         ),
                     )
                 );
