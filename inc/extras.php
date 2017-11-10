@@ -103,6 +103,7 @@ function modify_read_more_link() {
 }
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 
+
 /**
  * Custom Edit Button
  */

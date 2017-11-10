@@ -354,6 +354,22 @@
                     )
                 );
 
+                //CSS             
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-css',
+                    'title'     => __('CSS', 'bootstrapwp'),
+                    'fields'    => array(
+                         array( 
+                            'title'     => __( 'Custom CSS', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Insert any custom CSS.', 'bootstrapwp' ),
+                            'id'        => 'custom_css',
+                            'type'      => 'ace_editor',
+                            'mode'      => 'css',
+                            'theme'     => 'monokai',
+                        ),
+                    )
+                );
+
                 if ( file_exists( trailingslashit( dirname( __FILE__ ) ) . 'README.html' ) ) {
                     $tabs['docs'] = array(
                         'icon'    => 'el-icon-book',

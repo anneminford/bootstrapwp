@@ -13,7 +13,11 @@ if ( !function_exists( 'bswp_custom_css' ) ) {
 	add_action('wp_head', 'bswp_custom_css');
 	function bswp_custom_css() {
 			
-			$custom_css ='';	
+			$custom_css ='';
+
+			if(bswp_option('custom_css') != '') {
+				$custom_css .= bswp_option('custom_css');
+			}	
 
 			if(bswp_option('disable_fixed_navbar') == '1') {
 				$custom_css .= 'body { padding-top: 70px; }
