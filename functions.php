@@ -13,6 +13,9 @@ if ( !class_exists( 'ReduxFramework' ) ) {
 // Register all the theme options
 require_once( get_template_directory() . '/inc/redux-config.php' );
 
+// Theme options functions
+require_once( get_template_directory() . '/inc/bswp-options.php' );
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */

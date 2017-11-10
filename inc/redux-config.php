@@ -236,12 +236,22 @@
 
                 // ACTUAL DECLARATION OF SECTIONS
                
-
-
-
-
-
-               
+                $this->sections[] = array(
+                    'title'         => __( 'General', 'bootstrapwp' ),
+                    'heading'        => __( 'Header of this Section', 'bootstrapwp' ),
+                    'desc'          => 'Description of this section',
+                    'icon'          => 'el-icon-cog',
+                    'submenu'       => true,
+                    'fields'        => array(
+                        array(
+                            'id'        => 'test_text',
+                            'type'      => 'text', 
+                            'title'     => __( 'Testing Text', 'bootstrapwp' ),
+                            'default'   => 'BootstrapWP',
+                            'subtitle'  => __( 'Subtitle Here', 'bootstrapwp' ),
+                        ),
+                    ),
+                );
 
                 if ( file_exists( trailingslashit( dirname( __FILE__ ) ) . 'README.html' ) ) {
                     $tabs['docs'] = array(
