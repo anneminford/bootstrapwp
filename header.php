@@ -21,7 +21,15 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<header id="masthead" class="site-header" role="banner">
+<header id="masthead" class="site-header" role="banner">
+
+	<?php 
+	$fixed = (bswp_option('disable_fixed_navbar') == '1' ? 'navbar-fixed-top' : 'navbar-static-top');
+	$inverse = (bswp_option('disable_inverse_navbar') == '1' ? 'navbar-inverse' : 'navbar-default');
+	?>
+
+	<nav role="navigation">
+		<div class="navbar <?php echo $fixed; ?> <?php echo $inverse; ?> ">
 
 	<nav role="navigation">
 		<!-- <div class="navbar navbar-static-top navbar-default"> -->
