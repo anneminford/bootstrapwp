@@ -417,6 +417,35 @@
                             ),
                             'default'   => '4'
                         ),
+                         array( 
+                            'title'     => __( 'Display Filter', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select to enable/disable the portfolio filter.', 'bootstrapwp' ),
+                            'id'        => 'filter_switch',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Filter Button Size', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button size you want for the Filter.', 'bootstrapwp' ),
+                            'id'        => 'filter_size',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_size,
+                            'required'  => array('filter_switch','equals','1')
+                        ),
+
+                        array( 
+                            'title'     => __( 'Filter Button Color', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button color you want for the filter.', 'bootstrapwp' ),
+                            'id'        => 'filter_color',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_color,
+                            'required'  => array('filter_switch','equals','1')
+                        ),
                     )
                 );
 
