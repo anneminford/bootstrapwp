@@ -360,6 +360,33 @@
                     )
                 );
 
+                //Homepage                  
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-home',
+                    'title'     => __('Homepage', 'bootstrapwp'),
+                    //'subsection' => true,
+                    'fields'    => array(
+                        array(
+                            'id'        => 'homepage-layout',
+                            'type'      => 'sorter',
+                            'title'     => __('Homepage Layout Manager', 'bootstrapwp'),
+                            'desc'      => __('Organize how you want the layout to appear on the homepage', 'bootstrapwp'),
+                            'options'   => array(
+                                'enabled'   => array(
+                                    'herocontent'   => 'Hero Content',
+                                    'widgets'       => 'Widgets',
+                                ),
+                                'disabled'  => array(
+                                    'homecontent'   => 'Home Content',
+                                    'heropost'      => 'Hero Post',
+                                    
+                                ),
+                                
+                            ),
+                        ),
+                    )
+                );
+
                 //Footer             
                 $this->sections[] = array(
                     'icon'      => 'el-icon-photo',

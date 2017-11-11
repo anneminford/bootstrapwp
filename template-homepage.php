@@ -1,29 +1,28 @@
 <?php
 /**
- *
+ * @package WordPress
+ * @subpackage BootstrapWP
  * Template Name: Homepage
- *
- * The template for displaying the homepage.
- *
- *
- * @package bootstrapwp
  */
+?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
 <div class="container">
-	<div class="row">
+	<?php
+	// Loop through homepage modules and get their corresponding files
+	// See your theme's includes folder for editing these modules
+    global $bswp_options;
+    $homepage_modules = $bswp_options['homepage-layout']['enabled'];
+    if ($homepage_modules):
+		// Loop through each module
+    	foreach ($homepage_modules as $key=>$value) :
 
-<div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs »</a>
-        </p>
-      </div>
-
+			$value = preg_replace('/\s*/', '', $value); // remove white spaces
+			$value = strtolower($value); // lowercase
+    		get_template_part('includes/home', $value); // get correct file for each module
+   		endforeach;
+	endif; ?>
 </div>
-</div>
-
 
 <?php get_footer(); ?>
