@@ -29,6 +29,10 @@ get_header(); ?>
 			?>
 
 			<?php 
+			// Portfolio columns variable from Theme Options
+			$pcount = bswp_option('portfolio_column', '3'); ?>
+
+			<?php 
 			// the query
 			$the_query = new WP_Query( array('post_type' => 'portfolio') ); ?>
 
@@ -57,7 +61,7 @@ get_header(); ?>
 		                endif;
 		                ?>
 
-					<div class="col-sm-6 col-md-4 item <?php echo strtolower($tax); ?>">
+					<div class="col-sm-6 col-md-<?php echo $pcount; ?> item <?php echo strtolower($tax); ?>">
 						<div class="portfolio-item">
 							<a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 							<?php the_post_thumbnail(); ?>

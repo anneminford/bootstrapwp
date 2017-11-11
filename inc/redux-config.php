@@ -400,6 +400,26 @@
                     )
                 );
 
+                //Portfolio            
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-camera',
+                    'title'     => __('Portfolio', 'bootstrapwp'),
+                    'fields'    => array(
+                         array( 
+                            'title'     => __( 'Portfolio Columns', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the number of columns you would like to use for the portfolio.', 'bootstrapwp' ),
+                            'id'        => 'portfolio_column',
+                            'type'      => 'image_select',
+                            'options'   => array(
+                                '6' => array('alt' => '2 Column',  'img' => ReduxFramework::$_url . 'assets/img/2-col-portfolio.png'),
+                                '4' => array('alt' => '3 Column',  'img' => ReduxFramework::$_url . 'assets/img/3-col-portfolio.png'),
+                                '3' => array('alt' => '4 Column',  'img' => ReduxFramework::$_url . 'assets/img/4-col-portfolio.png'),
+                            ),
+                            'default'   => '4'
+                        ),
+                    )
+                );
+
                 //CSS             
                 $this->sections[] = array(
                     'icon'      => 'el-icon-css',
