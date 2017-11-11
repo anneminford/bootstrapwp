@@ -27,7 +27,16 @@
             	<?php } ?>
 			</div>
 			<div class="col-md-6 col-lg-6">
-				
+				<div class="social-icons">
+	                <?php $social_options = bswp_option( 'social_icons' ); ?>
+	                    <?php foreach ( $social_options as $key => $value ) {
+	                        if ( $value ) { ?>
+	                            <a href="<?php echo $value; ?>" title="<?php echo $key; ?>" target="_blank">
+	                                <i class="fa fa-<?php echo $key; ?>"></i>
+	                            </a>
+	                        <?php }
+	                    } ?>
+                </div><!-- .social-icons -->
 			</div>
 		</div><!-- .row -->
 		<div class="row">

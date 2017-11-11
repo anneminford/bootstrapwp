@@ -133,6 +133,18 @@ Footer
 }
 
 /*--------------------------------------------------------------
+Social Icons
+--------------------------------------------------------------*/
+.social-icons {
+	font-size: 32px;
+	padding-bottom: 20px;
+}
+
+.social-icons a:hover{
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------
 Wordbreak
 --------------------------------------------------------------*/
 #primary, #secondary {
@@ -441,8 +453,11 @@ Media Queries
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-
 	.poweredby {
+		float: right;
+	}
+
+	.social-icons {
 		float: right;
 	}
 }

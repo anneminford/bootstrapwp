@@ -190,6 +190,29 @@
                     "lg"        => "Large"
                 );
 
+                // Array of social options
+                $social_options = array(
+                    'twitter'       => 'Twitter',
+                    'facebook'      => 'Facebook',
+                    'vk'            => 'Vk',
+                    'google-plus'   => 'Google Plus',
+                    'instagram'     => 'instagram',
+                    'linkedin'      => 'LinkedIn',
+                    'tumblr'        => 'Tumblr',
+                    'pinterest'     => 'Pinterest',
+                    'github-alt'    => 'Github',
+                    'dribbble'      => 'Dribbble',
+                    'flickr'        => 'Flickr',
+                    'skype'         => 'Skype',
+                    'youtube'       => 'Youtube',
+                    'vimeo-square'  => 'Vimeo',
+                    'reddit'        => 'Reddit',
+                    'stumbleupon'   => 'Stumbleupon',
+                    'github'        => 'Github',
+                    'vine'          => 'Vine',
+                    'rss'           => 'RSS',
+                );
+
                 /**
                  * Used within different fields. Simply examples. Search for ACTUAL DECLARATION for field examples
                  * */
@@ -356,6 +379,21 @@
                             'id'        => 'custom_power',
                             'default'   => 'Powered by <a href="https://bootstrapwp.com">BootstrapWP</a>',
                             'type'      => 'editor',
+                        ),
+                    )
+                );
+
+                //Social             
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-torso',
+                    'title'     => __('Social', 'bootstrapwp'),
+                    'fields'    => array(
+                         array( 
+                            'title'     => __( 'Social Icons', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Arrange your social icons. Add complete URLs to your social profiles.', 'bootstrapwp' ),
+                            'id'        => 'social_icons',
+                            'type'      => 'sortable',
+                            'options'   => $social_options,
                         ),
                     )
                 );
