@@ -1,12 +1,12 @@
 <?php
     /**
-     * ReduxFramework Sample Config File
+     * ReduxFramework Config File
      * For full documentation, please visit: https://docs.reduxframework.com
      * */
 
-    if ( ! class_exists( 'Redux_Framework_sample_config' ) ) {
+    if ( ! class_exists( 'Redux_Framework_bswp_config' ) ) {
 
-        class Redux_Framework_sample_config {
+        class Redux_Framework_bswp_config {
 
             public $args = array();
             public $sections = array();
@@ -105,8 +105,8 @@
             function dynamic_section( $sections ) {
                 //$sections = array();
                 $sections[] = array(
-                    'title'  => __( 'Section via hook', 'redux-framework-demo' ),
-                    'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'redux-framework-demo' ),
+                    'title'  => __( 'Section via hook', 'bootstrapwp' ),
+                    'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'bootstrapwp' ),
                     'icon'   => 'el-icon-paper-clip',
                     // Leave this as a blank section, no options just some intro text set above.
                     'fields' => array()
@@ -150,6 +150,69 @@
 
             public function setSections() {
 
+                //Stylesheets 
+                $styles = array(
+                    'bootstrap.min.css' => 'Bootstrap', 
+                    'cerulean.min.css'  => 'Cerulean', 
+                    'cosmo.min.css'     => 'Cosmo', 
+                    'cyborg.min.css'    => 'Cyborg',
+                    'darkly.min.css'    => 'Darkly',
+                    'flatly.min.css'    => 'Flatly', 
+                    'journal.min.css'   => 'Journal', 
+                    'lumen.min.css'     => 'Lumen', 
+                    'paper.min.css'     => 'Paper',
+                    'readable.min.css'  => 'Readable',
+                    'sandstone.min.css' => 'Sandstone', 
+                    'simplex.min.css'   => 'Simplex', 
+                    'slate.min.css'     => 'Slate', 
+                    'spacelab.min.css'  => 'Spacelab', 
+                    'superhero.min.css' => 'Superhero', 
+                    'united.min.css'    => 'United', 
+                    'yeti.min.css'      => 'Yeti'
+                );
+
+                // Bootstrap Button Colors
+                $btn_color = array(
+                    "default"   => "Default",
+                    "primary"   => "Primary",
+                    "info"      => "Info",
+                    "success"   => "Success",
+                    "warning"   => "Warning",
+                    "danger"    => "Danger",
+                    "link"      => "Link"
+                );
+
+                // Bootstrap Button Size
+                $btn_size = array(
+                    "xs"        => "Extra Small",
+                    "sm"        => "Small",
+                    "default"   => "Medium",
+                    "lg"        => "Large"
+                );
+
+                // Array of social options
+                $social_options = array(
+                    'twitter'       => 'Twitter',
+                    'facebook'      => 'Facebook',
+                    'vk'            => 'Vk',
+                    'google-plus'   => 'Google Plus',
+                    'instagram'     => 'instagram',
+                    'linkedin'      => 'LinkedIn',
+                    'tumblr'        => 'Tumblr',
+                    'pinterest'     => 'Pinterest',
+                    'github-alt'    => 'Github',
+                    'dribbble'      => 'Dribbble',
+                    'flickr'        => 'Flickr',
+                    'skype'         => 'Skype',
+                    'youtube'       => 'Youtube',
+                    'vimeo-square'  => 'Vimeo',
+                    'reddit'        => 'Reddit',
+                    'stumbleupon'   => 'Stumbleupon',
+                    'github'        => 'Github',
+                    'vine'          => 'Vine',
+                    'rss'           => 'RSS',
+                );
+
                 /**
                  * Used within different fields. Simply examples. Search for ACTUAL DECLARATION for field examples
                  * */
@@ -186,7 +249,7 @@
                 $screenshot  = $this->theme->get_screenshot();
                 $class       = $screenshot ? 'has-screenshot' : '';
 
-                $customize_title = sprintf( __( 'Customize &#8220;%s&#8221;', 'redux-framework-demo' ), $this->theme->display( 'Name' ) );
+                $customize_title = sprintf( __( 'Customize &#8220;%s&#8221;', 'bootstrapwp' ), $this->theme->display( 'Name' ) );
 
                 ?>
                 <div id="current-theme" class="<?php echo esc_attr( $class ); ?>">
@@ -195,25 +258,25 @@
                             <a href="<?php echo wp_customize_url(); ?>" class="load-customize hide-if-no-customize"
                                title="<?php echo esc_attr( $customize_title ); ?>">
                                 <img src="<?php echo esc_url( $screenshot ); ?>"
-                                     alt="<?php esc_attr_e( 'Current theme preview', 'redux-framework-demo' ); ?>"/>
+                                     alt="<?php esc_attr_e( 'Current theme preview', 'bootstrapwp' ); ?>"/>
                             </a>
                         <?php endif; ?>
                         <img class="hide-if-customize" src="<?php echo esc_url( $screenshot ); ?>"
-                             alt="<?php esc_attr_e( 'Current theme preview', 'redux-framework-demo' ); ?>"/>
+                             alt="<?php esc_attr_e( 'Current theme preview', 'bootstrapwp' ); ?>"/>
                     <?php endif; ?>
 
                     <h4><?php echo $this->theme->display( 'Name' ); ?></h4>
 
                     <div>
                         <ul class="theme-info">
-                            <li><?php printf( __( 'By %s', 'redux-framework-demo' ), $this->theme->display( 'Author' ) ); ?></li>
-                            <li><?php printf( __( 'Version %s', 'redux-framework-demo' ), $this->theme->display( 'Version' ) ); ?></li>
-                            <li><?php echo '<strong>' . __( 'Tags', 'redux-framework-demo' ) . ':</strong> '; ?><?php printf( $this->theme->display( 'Tags' ) ); ?></li>
+                            <li><?php printf( __( 'By %s', 'bootstrapwp' ), $this->theme->display( 'Author' ) ); ?></li>
+                            <li><?php printf( __( 'Version %s', 'bootstrapwp' ), $this->theme->display( 'Version' ) ); ?></li>
+                            <li><?php echo '<strong>' . __( 'Tags', 'bootstrapwp' ) . ':</strong> '; ?><?php printf( $this->theme->display( 'Tags' ) ); ?></li>
                         </ul>
                         <p class="theme-description"><?php echo $this->theme->display( 'Description' ); ?></p>
                         <?php
                             if ( $this->theme->parent() ) {
-                                printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'redux-framework-demo' ) . '</p>', __( 'http://codex.wordpress.org/Child_Themes', 'redux-framework-demo' ), $this->theme->parent()->display( 'Name' ) );
+                                printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'bootstrapwp' ) . '</p>', __( 'http://codex.wordpress.org/Child_Themes', 'bootstrapwp' ), $this->theme->parent()->display( 'Name' ) );
                             }
                         ?>
 
@@ -235,18 +298,350 @@
                 }
 
                 // ACTUAL DECLARATION OF SECTIONS
+
+                //General            
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-cog',
+                    'title'     => __('General', 'bootstrapwp'),
+                    'fields'    => array(
+                         array(   
+                        'type'      => 'select',
+                        'id'        => 'css_style',
+                        'title'     => __('Theme Stylesheet', 'bootstrapwp'), 
+                        'subtitle'  => __('Select your themes alternative color scheme.', 'bootstrapwp'),
+                        'default'   => 'bootstrap.min.css',
+                        'options'   => $styles,
+                        ),
+
+                         array( 
+                            'title'     => __( 'Favicon', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Use this field to upload your custom favicon.', 'bootstrapwp' ),
+                            'id'        => 'custom_favicon',
+                            'default'   => '',
+                            'type'      => 'media',
+                            'url'       => true,
+                        ),
+                    )
+                ); 
                
+                // Header
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-website',
+                    'title'     => __('Header', 'bootstrapwp'),
+                    'fields'    => array(
+                        array( 
+                            'title'     => __( 'Fixed Navbar', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select to enable/disable a fixed navbar.', 'bootstrapwp' ),
+                            'id'        => 'disable_fixed_navbar',
+                            'default'   => false,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Inverse Navbar', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select to enable/disable an inverse navbar color.', 'bootstrapwp' ),
+                            'id'        => "disable_inverse_navbar",
+                            'default'   => false,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                         array( 
+                            'title'     => __( 'Logo', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Use this field to upload your custom logo for use in the theme header. (Recommended 200px x 40px)', 'bootstrapwp' ),
+                            'id'        => 'custom_logo',
+                            'default'   => '',
+                            'type'      => 'media',
+                            'url'       => true,
+                        ),
+                    )
+                );
 
 
+                //Homepage                  
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-home',
+                    'title'     => __('Homepage', 'bootstrapwp'),
+                    //'subsection' => true,
+                    'fields'    => array(
+                        array(
+                            'id'        => 'homepage-layout',
+                            'type'      => 'sorter',
+                            'title'     => __('Homepage Layout Manager', 'bootstrapwp'),
+                            'desc'      => __('Organize how you want the layout to appear on the homepage', 'bootstrapwp'),
+                            'options'   => array(
+                                'enabled'   => array(
+                                    'herocontent'   => 'Hero Content',
+                                    'widgets'       => 'Widgets',
+                                ),
+                                'disabled'  => array(
+                                    'homecontent'   => 'Home Content',
+                                    'heropost'      => 'Hero Post',
+                                    
+                                ),
+                                
+                            ),
+                        ),
 
+                        array(  
+                            'title'     => __('Featured Heading', 'bootstrap'),
+                            'subtitle'  => __('This is the heading of the featured content.', 'bootstrap'),
+                            'id'        => 'featured_heading',
+                            'default'   => 'Responsive!',
+                            'type'      => 'text',
+                        ),
 
+                        array(  
+                            'title'     => __('Featured Content', 'bootstrap'),
+                            'subtitle'  => __('This is the content of the Hero Content module.', 'bootstrap'),
+                            'id'        => 'featured_content',
+                            'default'   => 'A responsive WordPress theme with all the Bootstrap goodies. Check out the page layouts, features, and shortcodes this theme has to offer. Feel free to look around.',
+                            'type'      => 'textarea',
+                        ),
 
-               
+                        array( 
+                            'title'     => __( 'Featured Button', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Enable/Disable featured button.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array(  
+                            'title'     => __( 'Featured Button Text', 'bootstrapwp' ),
+                            'subtitle'  => __( 'This is the text that will replace Learn More.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_text',
+                            'default'   => 'Learn More',
+                            'type'      => 'text',
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array(  
+                            'title'     => __( 'Featured Button URL', 'bootstrapwp' ),
+                            'subtitle'  => __( 'This is the URL for the button.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_url',
+                            'default'   => 'http://',
+                            'type'      => 'text',
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array( 
+                            'title'     => __( 'Make the Featured button Full Width - Block', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Enable/Disable full width button.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_block',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array( 
+                            'title'     => __( 'Featured Button Size', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button size you want.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_size',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_size,
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array( 
+                            'title'     => __( 'Featured Button Color', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button color you want.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_color',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_color,
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array( 
+                            'title'     => __( 'Right Featured Content', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Add your image or text/html for right Featured content region.', 'bootstrapwp' ),
+                            'id'        => 'right_featured',
+                            'default'   => '',
+                            'type'      => 'editor',
+                        ),
+
+                    )
+                );
+
+                //Footer             
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-photo',
+                    'title'     => __('Footer', 'bootstrapwp'),
+                    'fields'    => array(
+                        array( 
+                            'title'     => __( 'Custom Copyright', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Add your own custom text/html for copyright region.', 'bootstrapwp' ),
+                            'id'        => 'custom_copyright',
+                            'default'   => '&copy; Copyright 2014 - <a href="https://bootstrapwp.com">BootstrapWP.com</a>',
+                            'type'      => 'editor',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Custom Powered By Text', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Add your own custom text/html for powered by region.', 'bootstrapwp' ),
+                            'id'        => 'custom_power',
+                            'default'   => 'Powered by <a href="https://bootstrapwp.com">BootstrapWP</a>',
+                            'type'      => 'editor',
+                        ),
+                    )
+                );
+
+                //Social             
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-torso',
+                    'title'     => __('Social', 'bootstrapwp'),
+                    'fields'    => array(
+                         array( 
+                            'title'     => __( 'Social Icons', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Arrange your social icons. Add complete URLs to your social profiles.', 'bootstrapwp' ),
+                            'id'        => 'social_icons',
+                            'type'      => 'sortable',
+                            'options'   => $social_options,
+                        ),
+                    )
+                );
+
+                //Blog              
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-wordpress',
+                    'title'     => __('Blog', 'bootstrapwp'),
+                    'fields'    => array(
+                        array( 
+                            'title'     => __( 'Display Meta Data', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select to enable/disable the date and author.', 'bootstrapwp' ),
+                            'id'        => 'disable_meta',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array(  
+                            'title'     => __( 'Read More Button Text', 'bootstrapwp' ),
+                            'subtitle'  => __( 'This is the text that will replace Read More.', 'bootstrapwp' ),
+                            'id'        => 'read_more_text',
+                            'default'   => 'Read More',
+                            'type'      => 'text',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Make the Read More button Full Width - Block', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Enable/Disable full width button.', 'bootstrapwp' ),
+                            'id'        => 'read_more_block',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Read More Button Size', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button size you want.', 'bootstrapwp' ),
+                            'id'        => 'read_more_size',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_size,
+                        ),
+
+                        array( 
+                            'title'     => __( 'Read More Button Color', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button color you want.', 'bootstrapwp' ),
+                            'id'        => 'read_more_color',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_color,
+                        ),
+
+                        array( 
+                            'title'     => __( 'Display Tags', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select to enable/disable the post tags.', 'bootstrapwp' ),
+                            'id'        => 'enable_disable_tags',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+                    )
+                );
+
+                //Portfolio            
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-camera',
+                    'title'     => __('Portfolio', 'bootstrapwp'),
+                    'fields'    => array(
+                         array( 
+                            'title'     => __( 'Portfolio Columns', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the number of columns you would like to use for the portfolio.', 'bootstrapwp' ),
+                            'id'        => 'portfolio_column',
+                            'type'      => 'image_select',
+                            'options'   => array(
+                                '6' => array('alt' => '2 Column',  'img' => ReduxFramework::$_url . 'assets/img/2-col-portfolio.png'),
+                                '4' => array('alt' => '3 Column',  'img' => ReduxFramework::$_url . 'assets/img/3-col-portfolio.png'),
+                                '3' => array('alt' => '4 Column',  'img' => ReduxFramework::$_url . 'assets/img/4-col-portfolio.png'),
+                            ),
+                            'default'   => '4'
+                        ),
+                         array( 
+                            'title'     => __( 'Display Filter', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select to enable/disable the portfolio filter.', 'bootstrapwp' ),
+                            'id'        => 'filter_switch',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Filter Button Size', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button size you want for the Filter.', 'bootstrapwp' ),
+                            'id'        => 'filter_size',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_size,
+                            'required'  => array('filter_switch','equals','1')
+                        ),
+
+                        array( 
+                            'title'     => __( 'Filter Button Color', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button color you want for the filter.', 'bootstrapwp' ),
+                            'id'        => 'filter_color',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_color,
+                            'required'  => array('filter_switch','equals','1')
+                        ),
+                    )
+                );
+
+                //CSS             
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-css',
+                    'title'     => __('CSS', 'bootstrapwp'),
+                    'fields'    => array(
+                         array( 
+                            'title'     => __( 'Custom CSS', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Insert any custom CSS.', 'bootstrapwp' ),
+                            'id'        => 'custom_css',
+                            'type'      => 'ace_editor',
+                            'mode'      => 'css',
+                            'theme'     => 'monokai',
+                        ),
+                    )
+                );
 
                 if ( file_exists( trailingslashit( dirname( __FILE__ ) ) . 'README.html' ) ) {
                     $tabs['docs'] = array(
                         'icon'    => 'el-icon-book',
-                        'title'   => __( 'Documentation', 'redux-framework-demo' ),
+                        'title'   => __( 'Documentation', 'bootstrapwp' ),
                         'content' => nl2br( file_get_contents( trailingslashit( dirname( __FILE__ ) ) . 'README.html' ) )
                     );
                 }
@@ -257,18 +652,18 @@
                 // Custom page help tabs, displayed using the help API. Tabs are shown in order of definition.
                 $this->args['help_tabs'][] = array(
                     'id'      => 'redux-help-tab-1',
-                    'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
-                    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+                    'title'   => __( 'Theme Information 1', 'bootstrapwp' ),
+                    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'bootstrapwp' )
                 );
 
                 $this->args['help_tabs'][] = array(
                     'id'      => 'redux-help-tab-2',
-                    'title'   => __( 'Theme Information 2', 'redux-framework-demo' ),
-                    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+                    'title'   => __( 'Theme Information 2', 'bootstrapwp' ),
+                    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'bootstrapwp' )
                 );
 
                 // Set the help sidebar
-                $this->args['help_sidebar'] = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo' );
+                $this->args['help_sidebar'] = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'bootstrapwp' );
             }
 
             /**
@@ -281,7 +676,7 @@
 
                 $this->args = array(
                     // TYPICAL -> Change these values as you need/desire
-                    'opt_name'             => 'redux_demo',
+                    'opt_name'             => 'bswp_options',
                     // This is where your data is stored in the database and also becomes your global variable name.
                     'display_name'         => $theme->get( 'Name' ),
                     // Name that appears at the top of your panel
@@ -291,8 +686,8 @@
                     //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
                     'allow_sub_menu'       => true,
                     // Show the sections below the admin menu item or not
-                    'menu_title'           => __( 'Sample Options', 'redux-framework-demo' ),
-                    'page_title'           => __( 'Sample Options', 'redux-framework-demo' ),
+                    'menu_title'           => __( 'Theme Options', 'bootstrapwp' ),
+                    'page_title'           => __( 'Theme Options', 'bootstrapwp' ),
                     // You will need to generate a Google API key to use this feature.
                     // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
                     'google_api_key'       => '',
@@ -310,7 +705,7 @@
                     // Choose an priority for the admin bar menu
                     'global_variable'      => '',
                     // Set a different name for your global variable other than the opt_name
-                    'dev_mode'             => true,
+                    'dev_mode'             => false,
                     // Show the time the page took to load, etc
                     'update_notice'        => true,
                     // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
@@ -392,43 +787,43 @@
                 $this->args['admin_bar_links'][] = array(
                     'id'    => 'redux-docs',
                     'href'   => 'http://docs.reduxframework.com/',
-                    'title' => __( 'Documentation', 'redux-framework-demo' ),
+                    'title' => __( 'Documentation', 'bootstrapwp' ),
                 );
 
                 $this->args['admin_bar_links'][] = array(
                     //'id'    => 'redux-support',
                     'href'   => 'https://github.com/ReduxFramework/redux-framework/issues',
-                    'title' => __( 'Support', 'redux-framework-demo' ),
+                    'title' => __( 'Support', 'bootstrapwp' ),
                 );
 
                 $this->args['admin_bar_links'][] = array(
                     'id'    => 'redux-extensions',
                     'href'   => 'reduxframework.com/extensions',
-                    'title' => __( 'Extensions', 'redux-framework-demo' ),
+                    'title' => __( 'Extensions', 'bootstrapwp' ),
                 );
 
                 // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
+                // $this->args['share_icons'][] = array(
+                //     'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
+                //     'title' => 'Visit us on GitHub',
+                //     'icon'  => 'el-icon-github'
+                //     //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
+                // );
+                // $this->args['share_icons'][] = array(
+                //     'url'   => 'https://www.facebook.com/pages/Redux-Framework/243141545850368',
+                //     'title' => 'Like us on Facebook',
+                //     'icon'  => 'el-icon-facebook'
+                // );
                 $this->args['share_icons'][] = array(
-                    'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
-                    'title' => 'Visit us on GitHub',
-                    'icon'  => 'el-icon-github'
-                    //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
-                );
-                $this->args['share_icons'][] = array(
-                    'url'   => 'https://www.facebook.com/pages/Redux-Framework/243141545850368',
-                    'title' => 'Like us on Facebook',
-                    'icon'  => 'el-icon-facebook'
-                );
-                $this->args['share_icons'][] = array(
-                    'url'   => 'http://twitter.com/reduxframework',
+                    'url'   => 'http://twitter.com/ozzyandlayla',
                     'title' => 'Follow us on Twitter',
                     'icon'  => 'el-icon-twitter'
                 );
-                $this->args['share_icons'][] = array(
-                    'url'   => 'http://www.linkedin.com/company/redux-framework',
-                    'title' => 'Find us on LinkedIn',
-                    'icon'  => 'el-icon-linkedin'
-                );
+                // $this->args['share_icons'][] = array(
+                //     'url'   => 'http://www.linkedin.com/company/redux-framework',
+                //     'title' => 'Find us on LinkedIn',
+                //     'icon'  => 'el-icon-linkedin'
+                // );
 
                 // Panel Intro text -> before the form
                 if ( ! isset( $this->args['global_variable'] ) || $this->args['global_variable'] !== false ) {
@@ -437,13 +832,13 @@
                     } else {
                         $v = str_replace( '-', '_', $this->args['opt_name'] );
                     }
-                    $this->args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo' ), $v );
+                    $this->args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'bootstrapwp' ), $v );
                 } else {
-                    $this->args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo' );
+                    $this->args['intro_text'] = __( '<p>Something in here</p>', 'bootstrapwp' );
                 }
 
                 // Add content after the form.
-                $this->args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo' );
+                $this->args['footer_text'] = __( '<p>Some text can go in here</p>', 'bootstrapwp' );
             }
 
             public function validate_callback_function( $field, $value, $existing_value ) {
@@ -480,7 +875,7 @@
         }
 
         global $reduxConfig;
-        $reduxConfig = new Redux_Framework_sample_config();
+        $reduxConfig = new Redux_Framework_bswp_config();
     } else {
         echo "The class named Redux_Framework_sample_config has already been called. <strong>Developers, you need to prefix this class with your company name or you'll run into problems!</strong>";
     }
