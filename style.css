@@ -39,6 +39,16 @@ and Blueprint http://www.blueprintcss.org/
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+Homepage 
+--------------------------------------------------------------*/
+
+.homehero .hentry {
+	border-bottom: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
 Portfolio
 --------------------------------------------------------------*/
 .portfolio img.wp-post-image {
@@ -128,8 +138,20 @@ Footer
 	padding:0 8px 0 0;
 }
 
-.copyright {
-	float: left;
+.copyright, .poweredby {
+	padding-bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+Social Icons
+--------------------------------------------------------------*/
+.social-icons {
+	font-size: 32px;
+	padding-bottom: 20px;
+}
+
+.social-icons a:hover{
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -441,8 +463,11 @@ Media Queries
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
+	.poweredby {
+		float: right;
+	}
 
-	.copyright {
+	.social-icons {
 		float: right;
 	}
 }

@@ -13,20 +13,29 @@ get_header(); ?>
 		<main id="main" class="site-main portfolio" role="main">
 
 			<?php
-			    $terms = get_terms("portfolio_tags");
-			    $count = count($terms);
-			    echo '<div id="filters" class="btn-group">';
-			    echo '<button type="button" class="btn btn-default" data-filter="*">'. __('All', 'bootstrapwp') .'</button>';
-			        if ( $count > 0 )
-			        {   
-			            foreach ( $terms as $term ) {
-			                $termname = strtolower($term->name);
-			                $termname = str_replace(' ', '-', $termname);
-			                echo '<button type="button" class="btn btn-default" data-filter=".'.$termname.'">'.$term->name.'</button>';
-			            }
-			        }
-			    echo "</div>";
+				if (bswp_option('filter_switch') == '1') {
+
+				    $terms = get_terms("portfolio_tags");
+				    $count = count($terms);
+				    $filter_btn_size = bswp_option('filter_size');
+				    $filter_btn_color = bswp_option('filter_color');
+				    echo '<div id="filters" class="btn-group btn-group-'.$filter_btn_size.'">';
+				    echo '<button type="button" class="btn btn-'.$filter_btn_color.'" data-filter="*">'. __('All', 'bootstrapwp') .'</button>';
+				        if ( $count > 0 )
+				        {   
+				            foreach ( $terms as $term ) {
+				                $termname = strtolower($term->name);
+				                $termname = str_replace(' ', '-', $termname);
+				                echo '<button type="button" class="btn btn-'.$filter_btn_color.'" data-filter=".'.$termname.'">'.$term->name.'</button>';
+				            }
+				        }
+				    echo "</div>";
+				}
 			?>
+
+			<?php 
+			// Portfolio columns variable from Theme Options
+			$pcount = bswp_option('portfolio_column', '3'); ?>
 
 			<?php 
 			// the query
@@ -57,7 +66,7 @@ get_header(); ?>
 		                endif;
 		                ?>
 
-					<div class="col-sm-6 col-md-4 item <?php echo strtolower($tax); ?>">
+					<div class="col-sm-6 col-md-<?php echo $pcount; ?> item <?php echo strtolower($tax); ?>">
 						<div class="portfolio-item">
 							<a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 							<?php the_post_thumbnail(); ?>

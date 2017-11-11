@@ -27,8 +27,35 @@
             	<?php } ?>
 			</div>
 			<div class="col-md-6 col-lg-6">
-				<p class="copyright">&copy; <?php _e('Copyright', 'bootstrapwp'); ?> <?php echo date('Y'); ?> - <a href="<?php echo home_url(); ?>/" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+				<div class="social-icons">
+	                <?php $social_options = bswp_option( 'social_icons' ); ?>
+	                    <?php foreach ( $social_options as $key => $value ) {
+	                        if ( $value ) { ?>
+	                            <a href="<?php echo $value; ?>" title="<?php echo $key; ?>" target="_blank">
+	                                <i class="fa fa-<?php echo $key; ?>"></i>
+	                            </a>
+	                        <?php }
+	                    } ?>
+                </div><!-- .social-icons -->
 			</div>
+		</div><!-- .row -->
+		<div class="row">
+			<div class="col-md-6 col-lg-6">
+				<?php if (bswp_option('custom_copyright') != '') { ?>
+				<div class="copyright">
+					<?php echo bswp_option('custom_copyright'); ?>
+				</div>
+				<?php } ?>
+				
+			</div>
+			<div class="col-md-6 col-lg-6">
+				<?php if (bswp_option('custom_power') != '') { ?>
+				<div class="poweredby">
+					<?php echo bswp_option('custom_power'); ?>
+				</div>
+				<?php } ?>	
+			</div>
+
 		</div><!-- .row -->
 	</div><!-- .containr -->
 </footer><!-- #colophon -->

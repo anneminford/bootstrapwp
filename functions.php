@@ -5,6 +5,17 @@
  * @package bootstrapwp
  */
 
+// Include the Redux theme options Framework
+if ( !class_exists( 'ReduxFramework' ) ) {
+	require_once( get_template_directory() . '/redux/framework.php' );
+}
+
+// Register all the theme options
+require_once( get_template_directory() . '/inc/redux-config.php' );
+
+// Theme options functions
+require_once( get_template_directory() . '/inc/bswp-options.php' );
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -110,6 +121,36 @@ function bootstrapwp_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+
+		register_sidebar( array(
+		'name'          => __( 'Home 1', 'bootstrapwp' ),
+		'id'            => 'home-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Home 2', 'bootstrapwp' ),
+		'id'            => 'home-2',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Home 3', 'bootstrapwp' ),
+		'id'            => 'home-3',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'bootstrapwp_widgets_init' );
 
@@ -117,19 +158,19 @@ add_action( 'widgets_init', 'bootstrapwp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bootstrapwp_scripts() {
-	wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.7.0', 'all' );
+	wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/css/'. bswp_option('css_style', 'bootstrap.min.css'), array(), '3.3.0', 'all' );
 
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.7.0', 'all' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0', 'all' );
 
 	wp_enqueue_style( 'bootstrapwp-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.7.0', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.0', true );
 
-	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '3.0.4', true );
+	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array(), '2.0.1', true );
 
-	wp_enqueue_script( 'imagesloaded-js', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '4.1.3', true );
+	wp_enqueue_script( 'imagesloaded-js', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array(), '3.1.8', true );
 
-	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '3.7.0', true );
+	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array(), '3.2.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -191,3 +232,8 @@ require get_template_directory() . '/inc/post-types/CPT.php';
  * Portfolio Custom Post Type
  */
 require get_template_directory() . '/inc/post-types/register-portfolio.php';
+
+/**
+ * Theme options customer css
+ */
+require get_template_directory() . '/inc/custom-css.php';
