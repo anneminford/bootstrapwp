@@ -384,6 +384,90 @@
                                 
                             ),
                         ),
+
+                        array(  
+                            'title'     => __('Featured Heading', 'bootstrap'),
+                            'subtitle'  => __('This is the heading of the featured content.', 'bootstrap'),
+                            'id'        => 'featured_heading',
+                            'default'   => 'Responsive!',
+                            'type'      => 'text',
+                        ),
+
+                        array(  
+                            'title'     => __('Featured Content', 'bootstrap'),
+                            'subtitle'  => __('This is the content of the Hero Content module.', 'bootstrap'),
+                            'id'        => 'featured_content',
+                            'default'   => 'A responsive WordPress theme with all the Bootstrap goodies. Check out the page layouts, features, and shortcodes this theme has to offer. Feel free to look around.',
+                            'type'      => 'textarea',
+                        ),
+
+                        array( 
+                            'title'     => __( 'Featured Button', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Enable/Disable featured button.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                        ),
+
+                        array(  
+                            'title'     => __( 'Featured Button Text', 'bootstrapwp' ),
+                            'subtitle'  => __( 'This is the text that will replace Learn More.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_text',
+                            'default'   => 'Learn More',
+                            'type'      => 'text',
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array(  
+                            'title'     => __( 'Featured Button URL', 'bootstrapwp' ),
+                            'subtitle'  => __( 'This is the URL for the button.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_url',
+                            'default'   => 'http://',
+                            'type'      => 'text',
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array( 
+                            'title'     => __( 'Make the Featured button Full Width - Block', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Enable/Disable full width button.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_block',
+                            'default'   => true,
+                            'on'        => __( 'Enable', 'bootstrapwp' ),
+                            'off'       => __( 'Disable', 'bootstrapwp' ),
+                            'type'      => 'switch',
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array( 
+                            'title'     => __( 'Featured Button Size', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button size you want.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_size',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_size,
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array( 
+                            'title'     => __( 'Featured Button Color', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Select the Bootstrap button color you want.', 'bootstrapwp' ),
+                            'id'        => 'featured_btn_color',
+                            'default'   => 'default',
+                            'type'      => 'select',
+                            'options'   => $btn_color,
+                            'required'  => array('featured_btn','equals','1'),
+                        ),
+
+                        array( 
+                            'title'     => __( 'Right Featured Content', 'bootstrapwp' ),
+                            'subtitle'  => __( 'Add your image or text/html for right Featured content region.', 'bootstrapwp' ),
+                            'id'        => 'right_featured',
+                            'default'   => '',
+                            'type'      => 'editor',
+                        ),
+
                     )
                 );
 
