@@ -27,10 +27,10 @@
 
 			if (bswp_option('featured_btn_block') == '1' ){
 				$btn_block = "btn-block";
+			} else {
+				$btn_block = "";
 			}
 
-			// Ternary operator to define variable
-			$btn_block = (bswp_option('featured_btn_block') == '1' ? 'btn-block' : '');
 			?>
 
 			<?php if (bswp_option('featured_btn') == '1' ){	?>	      

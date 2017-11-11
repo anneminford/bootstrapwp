@@ -360,6 +360,7 @@
                     )
                 );
 
+
                 //Homepage                  
                 $this->sections[] = array(
                     'icon'      => 'el-icon-home',
